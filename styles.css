@@ -1,0 +1,338 @@
+/* CSS Reset & Custom Properties */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Colors */
+    --primary-color: #2563eb;
+    --secondary-color: #1e293b;
+    --accent-color: #3b82f6;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --text-dark: #1e293b;
+    --text-medium: #475569;
+    --text-light: #64748b;
+    
+    /* Typography */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 50px;
+    
+    /* Transitions */
+    --transition: 0.3s ease;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    background: var(--bg-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition);
+}
+
+nav li a:hover {
+    background-color: rgba(37, 99, 235, 0.1);
+    transform: scale(1.05);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+section {
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-lg) 0;
+    scroll-margin-top: 6rem;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* About Section */
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.project-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition);
+    will-change: transform;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-card p {
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--primary-color);
+    color: var(--bg-white);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    will-change: transform;
+}
+
+.project-links a:hover {
+    background: var(--accent-color);
+    color: var(--bg-white);
+    transform: scale(1.05);
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skills-list li {
+    background: var(--bg-white);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-color);
+    transition: all var(--transition);
+    will-change: transform;
+}
+
+.skills-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Section */
+.contact-section p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 0.75rem var(--spacing-lg);
+    background: var(--secondary-color);
+    color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: all var(--transition);
+    will-change: transform;
+}
+
+.contact-links a:hover {
+    background: var(--primary-color);
+    color: var(--bg-white);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--bg-white);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    margin-top: var(--spacing-2xl);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Tablet Breakpoint */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    main {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    nav li a {
+        padding: 0.75rem var(--spacing-md);
+        font-size: 1.1rem;
+    }
+}
