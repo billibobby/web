@@ -142,123 +142,244 @@ section h2 {
     margin-bottom: var(--spacing-lg);
 }
 
-/* About Section */
-.about-section p {
-    max-width: 800px;
-    margin: 0 auto var(--spacing-md);
-    font-size: 1.1rem;
-    line-height: 1.8;
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    text-align: center;
 }
 
-/* Projects Section */
-.projects-grid {
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--text-medium);
+    color: var(--bg-white);
+}
+
+.btn-secondary:hover {
+    background: var(--text-dark);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #10b981;
+    color: var(--bg-white);
+}
+
+.btn-success:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+/* Assembler Section */
+.assembler-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.project-card {
+.canvas-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.nft-canvas {
     background: var(--bg-white);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all var(--transition);
-    will-change: transform;
 }
 
-.project-card:hover {
+#nftCanvas {
+    border: 2px solid var(--text-light);
+    border-radius: var(--radius-sm);
+    background: #f0f0f0;
+}
+
+.canvas-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.traits-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.trait-category {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trait-category h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.trait-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.trait-option {
+    padding: var(--spacing-xs);
+    background: var(--bg-light);
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.9rem;
+}
+
+.trait-option:hover {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: var(--primary-color);
+}
+
+.trait-option.selected {
+    background: var(--primary-color);
+    color: var(--bg-white);
+    border-color: var(--accent-color);
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    min-height: 200px;
+}
+
+.gallery-item {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition);
+}
+
+.gallery-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.project-card h3 {
-    color: var(--primary-color);
-    margin-bottom: var(--spacing-sm);
+.gallery-item canvas {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
 }
 
-.project-card p {
-    color: var(--text-medium);
-    margin-bottom: var(--spacing-md);
-}
-
-.project-links {
+.gallery-controls {
     display: flex;
     gap: var(--spacing-sm);
+    justify-content: center;
     flex-wrap: wrap;
 }
 
-.project-links a {
-    display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-md);
-    background: var(--primary-color);
-    color: var(--bg-white);
-    border-radius: var(--radius-sm);
-    transition: all var(--transition);
-    will-change: transform;
-}
-
-.project-links a:hover {
-    background: var(--accent-color);
-    color: var(--bg-white);
-    transform: scale(1.05);
-}
-
-/* Skills Section */
-.skills-list {
-    list-style: none;
+/* Traits Section */
+.rarity-stats {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-sm);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
     max-width: 800px;
     margin: 0 auto;
 }
 
-.skills-list li {
+.rarity-category {
     background: var(--bg-white);
-    padding: var(--spacing-sm);
     border-radius: var(--radius-md);
-    text-align: center;
+    padding: var(--spacing-md);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid var(--primary-color);
-    transition: all var(--transition);
-    will-change: transform;
 }
 
-.skills-list li:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Contact Section */
-.contact-section p {
+.rarity-category h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
     text-align: center;
-    max-width: 700px;
-    margin: 0 auto var(--spacing-lg);
-    font-size: 1.1rem;
 }
 
-.contact-links {
+.rarity-list {
+    display: grid;
+    gap: var(--spacing-xs);
+}
+
+.rarity-item {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--bg-light);
+    border-radius: var(--radius-sm);
     display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.contact-links a {
-    display: inline-block;
-    padding: 0.75rem var(--spacing-lg);
-    background: var(--secondary-color);
-    color: var(--bg-white);
-    border-radius: var(--radius-lg);
-    font-weight: 600;
-    transition: all var(--transition);
-    will-change: transform;
+/* Export Section */
+.export-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.contact-links a:hover {
-    background: var(--primary-color);
-    color: var(--bg-white);
-    transform: scale(1.05);
+.export-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.export-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.export-card p {
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+.export-card input {
+    width: 100%;
+    max-width: 200px;
+    padding: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    border: 2px solid var(--text-light);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+}
+
+.export-card input:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 /* Footer */
@@ -300,12 +421,24 @@ footer p {
         padding: var(--spacing-xl) var(--spacing-lg);
     }
     
-    .projects-grid {
+    .assembler-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .traits-panel {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .trait-options {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .rarity-stats {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .skills-list {
-        grid-template-columns: repeat(3, 1fr);
+    .export-options {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -323,12 +456,16 @@ footer p {
         padding: var(--spacing-2xl) var(--spacing-lg);
     }
     
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .assembler-container {
+        grid-template-columns: 2fr 1fr;
     }
     
-    .skills-list {
-        grid-template-columns: repeat(5, 1fr);
+    .traits-panel {
+        grid-template-columns: 1fr;
+    }
+    
+    .export-options {
+        grid-template-columns: repeat(3, 1fr);
     }
     
     nav li a {

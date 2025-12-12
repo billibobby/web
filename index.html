@@ -3,102 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio showcasing web development projects and skills">
-    <title>Portfolio - Bill Ncias</title>
+    <meta name="description" content="NFT Assembler - Create unique NFTs by combining different traits and layers">
+    <title>NFT Assembler</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Bill Ncias</h1>
+        <h1>NFT Assembler</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#assembler">Assembler</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#traits">Traits</a></li>
+                <li><a href="#export">Export</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about" class="about-section">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I'm a passionate web developer with a love for creating innovative and user-friendly digital experiences. With a strong foundation in modern web technologies, I enjoy turning complex problems into simple, beautiful, and intuitive solutions.</p>
-            <p>My journey in web development began with curiosity about how websites work, and has evolved into a deep appreciation for clean code, responsive design, and seamless user experiences. I'm constantly learning new technologies and best practices to stay current in this ever-evolving field.</p>
-            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in the power of collaboration and continuous learning to create meaningful digital solutions.</p>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3>E-Commerce Platform</h3>
-                    <p>A full-stack e-commerce solution built with modern web technologies. Features include user authentication, product catalog, shopping cart, and secure payment processing. Responsive design ensures optimal experience across all devices.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/ecommerce-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://your-ecommerce-demo.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        <section id="assembler" class="assembler-section">
+            <h2>Create Your NFT</h2>
+            <div class="assembler-container">
+                <div class="canvas-area">
+                    <div class="nft-canvas">
+                        <canvas id="nftCanvas" width="400" height="400"></canvas>
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <h3>Task Management App</h3>
-                    <p>An intuitive task management application with drag-and-drop functionality, real-time updates, and collaborative features. Built with a focus on user experience and productivity enhancement.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/task-manager" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://your-taskmanager-demo.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <div class="canvas-controls">
+                        <button id="randomizeBtn" class="btn btn-primary">Randomize</button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear All</button>
+                        <button id="downloadBtn" class="btn btn-success">Download NFT</button>
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <h3>Weather Dashboard</h3>
-                    <p>A responsive weather application that provides current conditions and forecasts for multiple locations. Features include geolocation support, interactive maps, and detailed weather analytics with beautiful data visualizations.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/weather-dashboard" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://your-weather-demo.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                </div>
+                
+                <div class="traits-panel">
+                    <div class="trait-category">
+                        <h3>Background</h3>
+                        <div class="trait-options" data-category="background">
+                            <div class="trait-option" data-trait="blue">Blue</div>
+                            <div class="trait-option" data-trait="red">Red</div>
+                            <div class="trait-option" data-trait="green">Green</div>
+                            <div class="trait-option" data-trait="purple">Purple</div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="project-card">
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive portfolio website showcasing web development projects and skills. Built with semantic HTML5, modern CSS, and JavaScript. Features smooth scrolling, interactive elements, and optimized performance.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://your-portfolio-demo.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    
+                    <div class="trait-category">
+                        <h3>Body</h3>
+                        <div class="trait-options" data-category="body">
+                            <div class="trait-option" data-trait="circle">Circle</div>
+                            <div class="trait-option" data-trait="square">Square</div>
+                            <div class="trait-option" data-trait="triangle">Triangle</div>
+                            <div class="trait-option" data-trait="hexagon">Hexagon</div>
+                        </div>
                     </div>
-                </article>
+                    
+                    <div class="trait-category">
+                        <h3>Eyes</h3>
+                        <div class="trait-options" data-category="eyes">
+                            <div class="trait-option" data-trait="normal">Normal</div>
+                            <div class="trait-option" data-trait="sleepy">Sleepy</div>
+                            <div class="trait-option" data-trait="wink">Wink</div>
+                            <div class="trait-option" data-trait="laser">Laser</div>
+                        </div>
+                    </div>
+                    
+                    <div class="trait-category">
+                        <h3>Accessories</h3>
+                        <div class="trait-options" data-category="accessories">
+                            <div class="trait-option" data-trait="none">None</div>
+                            <div class="trait-option" data-trait="hat">Hat</div>
+                            <div class="trait-option" data-trait="glasses">Glasses</div>
+                            <div class="trait-option" data-trait="crown">Crown</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="skills-section">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>MongoDB</li>
-                <li>Git & GitHub</li>
-                <li>Responsive Design</li>
-                <li>RESTful APIs</li>
-            </ul>
+        <section id="gallery" class="gallery-section">
+            <h2>Generated NFTs</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Generated NFTs will appear here -->
+            </div>
+            <div class="gallery-controls">
+                <button id="generateBatchBtn" class="btn btn-primary">Generate 10 Random NFTs</button>
+                <button id="clearGalleryBtn" class="btn btn-secondary">Clear Gallery</button>
+                <button id="exportAllBtn" class="btn btn-success">Export All as ZIP</button>
+            </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2>Get In Touch</h2>
-            <p>I'm always interested in new opportunities and collaborations. Whether you have a project in mind, want to discuss web development, or just want to connect, I'd love to hear from you!</p>
-            <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email Me</a>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <section id="traits" class="traits-section">
+            <h2>Trait Rarity</h2>
+            <div class="rarity-stats">
+                <div class="rarity-category">
+                    <h3>Background Rarity</h3>
+                    <div class="rarity-list">
+                        <div class="rarity-item">Blue: 25%</div>
+                        <div class="rarity-item">Red: 25%</div>
+                        <div class="rarity-item">Green: 25%</div>
+                        <div class="rarity-item">Purple: 25%</div>
+                    </div>
+                </div>
+                <div class="rarity-category">
+                    <h3>Body Rarity</h3>
+                    <div class="rarity-list">
+                        <div class="rarity-item">Circle: 40%</div>
+                        <div class="rarity-item">Square: 30%</div>
+                        <div class="rarity-item">Triangle: 20%</div>
+                        <div class="rarity-item">Hexagon: 10%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="export" class="export-section">
+            <h2>Export Options</h2>
+            <div class="export-options">
+                <div class="export-card">
+                    <h3>Single NFT</h3>
+                    <p>Download your current NFT creation as a PNG image with metadata JSON file.</p>
+                    <button class="btn btn-primary" id="exportSingleBtn">Export Current NFT</button>
+                </div>
+                <div class="export-card">
+                    <h3>Batch Generation</h3>
+                    <p>Generate and export multiple unique NFTs with randomized traits.</p>
+                    <input type="number" id="batchSize" placeholder="Number of NFTs" min="1" max="1000" value="10">
+                    <button class="btn btn-primary" id="exportBatchBtn">Generate Batch</button>
+                </div>
+                <div class="export-card">
+                    <h3>Collection Metadata</h3>
+                    <p>Export collection metadata including trait frequencies and rarity information.</p>
+                    <button class="btn btn-secondary" id="exportMetadataBtn">Export Metadata</button>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Bill Ncias. All rights reserved.</p>
+        <p>&copy; 2024 NFT Assembler. Create unique digital assets.</p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
