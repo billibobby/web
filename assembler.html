@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NFT Assembler - Create unique NFTs by combining different traits and layers">
+    <title>NFT Assembler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>NFT Assembler</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Portfolio</a></li>
+                <li><a href="#assembler">Assembler</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#traits">Traits</a></li>
+                <li><a href="#export">Export</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="assembler" class="assembler-section">
+            <h2>Create Your NFT</h2>
+            <div class="assembler-container">
+                <div class="canvas-area">
+                    <div class="nft-canvas">
+                        <canvas id="nftCanvas" width="400" height="400"></canvas>
+                    </div>
+                    <div class="canvas-controls">
+                        <button id="randomizeBtn" class="btn btn-primary">Randomize</button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear All</button>
+                        <button id="downloadBtn" class="btn btn-success">Download NFT</button>
+                    </div>
+                </div>
+                
+                <div class="traits-panel">
+                    <div class="trait-category">
+                        <h3>Background</h3>
+                        <div class="trait-options" data-category="background">
+                            <div class="trait-option" data-trait="blue">Blue</div>
+                            <div class="trait-option" data-trait="red">Red</div>
+                            <div class="trait-option" data-trait="green">Green</div>
+                            <div class="trait-option" data-trait="purple">Purple</div>
+                        </div>
+                    </div>
+                    
+                    <div class="trait-category">
+                        <h3>Body</h3>
+                        <div class="trait-options" data-category="body">
+                            <div class="trait-option" data-trait="circle">Circle</div>
+                            <div class="trait-option" data-trait="square">Square</div>
+                            <div class="trait-option" data-trait="triangle">Triangle</div>
+                            <div class="trait-option" data-trait="hexagon">Hexagon</div>
+                        </div>
+                    </div>
+                    
+                    <div class="trait-category">
+                        <h3>Eyes</h3>
+                        <div class="trait-options" data-category="eyes">
+                            <div class="trait-option" data-trait="normal">Normal</div>
+                            <div class="trait-option" data-trait="sleepy">Sleepy</div>
+                            <div class="trait-option" data-trait="wink">Wink</div>
+                            <div class="trait-option" data-trait="laser">Laser</div>
+                        </div>
+                    </div>
+                    
+                    <div class="trait-category">
+                        <h3>Accessories</h3>
+                        <div class="trait-options" data-category="accessories">
+                            <div class="trait-option" data-trait="none">None</div>
+                            <div class="trait-option" data-trait="hat">Hat</div>
+                            <div class="trait-option" data-trait="glasses">Glasses</div>
+                            <div class="trait-option" data-trait="crown">Crown</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>Generated NFTs</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Generated NFTs will appear here -->
+            </div>
+            <div class="gallery-controls">
+                <button id="generateBatchBtn" class="btn btn-primary">Generate 10 Random NFTs</button>
+                <button id="clearGalleryBtn" class="btn btn-secondary">Clear Gallery</button>
+                <button id="exportAllBtn" class="btn btn-success">Export All as ZIP</button>
+            </div>
+        </section>
+
+        <section id="traits" class="traits-section">
+            <h2>Trait Rarity</h2>
+            <div class="rarity-stats">
+                <div class="rarity-category">
+                    <h3>Background Rarity</h3>
+                    <div class="rarity-list">
+                        <div class="rarity-item">Blue: 25%</div>
+                        <div class="rarity-item">Red: 25%</div>
+                        <div class="rarity-item">Green: 25%</div>
+                        <div class="rarity-item">Purple: 25%</div>
+                    </div>
+                </div>
+                <div class="rarity-category">
+                    <h3>Body Rarity</h3>
+                    <div class="rarity-list">
+                        <div class="rarity-item">Circle: 40%</div>
+                        <div class="rarity-item">Square: 30%</div>
+                        <div class="rarity-item">Triangle: 20%</div>
+                        <div class="rarity-item">Hexagon: 10%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="export" class="export-section">
+            <h2>Export Options</h2>
+            <div class="export-options">
+                <div class="export-card">
+                    <h3>Single NFT</h3>
+                    <p>Download your current NFT creation as a PNG image with metadata JSON file.</p>
+                    <button class="btn btn-primary" id="exportSingleBtn">Export Current NFT</button>
+                </div>
+                <div class="export-card">
+                    <h3>Batch Generation</h3>
+                    <p>Generate and export multiple unique NFTs with randomized traits.</p>
+                    <input type="number" id="batchSize" placeholder="Number of NFTs" min="1" max="1000" value="10">
+                    <button class="btn btn-primary" id="exportBatchBtn">Generate Batch</button>
+                </div>
+                <div class="export-card">
+                    <h3>Collection Metadata</h3>
+                    <p>Export collection metadata including trait frequencies and rarity information.</p>
+                    <button class="btn btn-secondary" id="exportMetadataBtn">Export Metadata</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NFT Assembler. Create unique digital assets.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
